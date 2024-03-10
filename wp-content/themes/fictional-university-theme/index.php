@@ -1,11 +1,11 @@
+<h1>This is the header area</h1>
+
 <?php 
-  function greet($name, $color) {
-    echo "<p>Hi, my name is $name and my favorite color is $color.</p>";
-  }
+  while (have_posts()) {
+    the_post(); ?>
 
-  greet('John', 'blue');
-  greet('Jane', 'green');
+    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <?php the_content(); ?>
+    <hr>
+  <?php }
 ?>
-
-<h1><?php bloginfo('name'); ?></h1>
-<p><?php bloginfo('description') ?></p>
